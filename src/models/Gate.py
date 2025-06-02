@@ -1,6 +1,6 @@
 import numpy as np
-import QuantumObject
-import NoiseChannel
+from src.models.QuantumObject import QuantumObject
+from src.models.NoiseChannel import NoiseChannel
 
 class Gate(QuantumObject):
     """

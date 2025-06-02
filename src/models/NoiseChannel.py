@@ -1,4 +1,4 @@
-import QuantumObject
+from src.models.QuantumObject import QuantumObject
 
 class NoiseChannel(QuantumObject):
     """

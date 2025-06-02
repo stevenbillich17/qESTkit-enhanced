@@ -1,5 +1,5 @@
 import numpy as np
-from simulator.gates.gate import Gate
+from .gate import Gate
 
 
 class Z(Gate):
