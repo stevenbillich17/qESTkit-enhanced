@@ -1,4 +1,4 @@
-import qiskit
-from qiskit import QuantumCircuit
+from loader import Loader
 
-QuantumCircuit.from_qasm_file("qasm2/ghz.qasm").draw(output="mpl", scale=0.5, style={"name": "iqx"}).savefig("qasm2/ghz.png")
+
+circuit = Loader.load_qasm2("src/loader/circuit.qasm")
