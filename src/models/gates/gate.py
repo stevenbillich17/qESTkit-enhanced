@@ -1,6 +1,7 @@
 import numpy as np
 from abc import ABC, abstractmethod
 
+
 class Gate(ABC):
     def __init__(self, name, qubits=None):
         """
@@ -33,10 +34,11 @@ class Gate(ABC):
         :raises ValueError: If any target qubit index is invalid.
         """
         if any(q >= num_qubits or q < 0 for q in self.qubits):
-            raise ValueError(f"Invalid qubit indices {self.qubits} for a system with {num_qubits} qubits.")
+            raise ValueError(
+                f"Invalid qubit indices {self.qubits} for a system with {num_qubits} qubits."
+            )
 
     # get_operator removed, will be handled by simulators
 
     def __repr__(self):
         return f"Gate(name={self.name}, qubits={self.qubits})"
-

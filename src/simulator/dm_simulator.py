@@ -3,6 +3,7 @@ from typing import List, Dict, Union, Optional
 from qestkit_simulator import QuantumSimulator
 from typing import Any
 
+
 class DensityMatrixSimulator(QuantumSimulator):
     def __init__(self, num_qubits: int):
         self.num_qubits = num_qubits
@@ -11,7 +12,9 @@ class DensityMatrixSimulator(QuantumSimulator):
 
     def reset(self):
         # Initialize the density matrix to the |0...0⟩ state
-        self.density_matrix = np.zeros((2**self.num_qubits, 2**self.num_qubits), dtype=complex)
+        self.density_matrix = np.zeros(
+            (2**self.num_qubits, 2**self.num_qubits), dtype=complex
+        )
         self.density_matrix[0, 0] = 1.0
 
     def get_num_qubits(self) -> int:
@@ -48,7 +51,9 @@ class DensityMatrixSimulator(QuantumSimulator):
     def run(self, circuit: Any, shots: int = 1024) -> Dict[str, int]:
         # Simulate measurement outcomes
         probabilities = np.real(np.diag(self.density_matrix))
-        outcomes = {bin(i)[2:].zfill(self.num_qubits): 0 for i in range(2**self.num_qubits)}
+        outcomes = {
+            bin(i)[2:].zfill(self.num_qubits): 0 for i in range(2**self.num_qubits)
+        }
 
         for _ in range(shots):
             sampled_state = np.random.choice(len(probabilities), p=probabilities)
@@ -57,14 +62,14 @@ class DensityMatrixSimulator(QuantumSimulator):
         return outcomes
 
     def calculate_expectation_value(
-        self,
-        observable: np.ndarray,
-        state_vector: np.ndarray
+        self, observable: np.ndarray, state_vector: np.ndarray
     ) -> float:
         # Calculate expectation value using the density matrix
         return np.real(np.trace(np.dot(self.density_matrix, observable)))
 
-    def _get_gate_matrix(self, gate_name: str, params: Optional[List[float]]) -> np.ndarray:
+    def _get_gate_matrix(
+        self, gate_name: str, params: Optional[List[float]]
+    ) -> np.ndarray:
         # Define gate matrices (example: Pauli-X, Hadamard)
         if gate_name == "x":
             return np.array([[0, 1], [1, 0]], dtype=complex)

@@ -1,0 +1,16 @@
+[tool.ruff]
+line-length = 88
+target-version = "py311"  # Set your Python version (e.g. "py38", "py310", etc.)
+
+[tool.ruff.lint]
+select = ["E", "F", "W"]  # Enable specific rule codes (like flake8's E/W/F)
+ignore = ["E501"]         # Optionally ignore rules (e.g. line length)
+
+[tool.ruff.format]
+quote-style = "double"    # Or "single"
+indent-style = "space"
+line-ending = "lf"
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["F401"]  # Ignore unused imports in test files
+

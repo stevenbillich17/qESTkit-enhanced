@@ -1,5 +1,6 @@
 from src.models.QuantumObject import QuantumObject
 
+
 class NoiseChannel(QuantumObject):
     """
     Base class for quantum noise channels.
@@ -44,19 +45,27 @@ class NoiseChannel(QuantumObject):
         elif simulator_type == "tensor_network":
             return self._apply_tensor_network(quantum_state, qubits)
         else:
-            raise ValueError(f"Invalid simulator type: {simulator_type}. Must be 'state_vector', 'density_matrix', or 'tensor_network'.")
+            raise ValueError(
+                f"Invalid simulator type: {simulator_type}. Must be 'state_vector', 'density_matrix', or 'tensor_network'."
+            )
 
     def _apply_state_vector(self, state_vector, qubits):
         """Applies the noise to a state vector representation."""
-        raise NotImplementedError("State vector implementation not yet available for this noise channel.")
+        raise NotImplementedError(
+            "State vector implementation not yet available for this noise channel."
+        )
 
     def _apply_density_matrix(self, density_matrix, qubits):
         """Applies the noise to a density matrix representation."""
-        raise NotImplementedError("Density matrix implementation not yet available for this noise channel.")
+        raise NotImplementedError(
+            "Density matrix implementation not yet available for this noise channel."
+        )
 
     def _apply_tensor_network(self, tensor_network, qubits):
         """Applies the noise to a tensor network representation."""
-        raise NotImplementedError("Tensor network implementation not yet available for this noise channel.")
+        raise NotImplementedError(
+            "Tensor network implementation not yet available for this noise channel."
+        )
 
     def validate(self, num_qubits):
         """Validates the noise channel against the given number of qubits."""

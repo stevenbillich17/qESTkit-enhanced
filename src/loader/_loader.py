@@ -2,6 +2,7 @@ from qiskit import qasm2
 from src.dtos import QuantumCircuit
 from src.models.gates import X, Hadamard, CNOT, CZ, X, Y, Z, S, T, Rx, Ry, Rz, Identity
 
+
 class Loader:
     def __init__(self, path: str):
         self.path = path
@@ -20,7 +21,7 @@ class Loader:
         # Map Qiskit circuit to custom circuit
         for instruction in qs_circuit.data:
             gate_name = instruction.operation.name
-            if gate_name == 'measure':
+            if gate_name == "measure":
                 # Skip measurement gates as they are not part of the circuit structure
                 continue
             target_qubits = [qubit._index for qubit in instruction.qubits]

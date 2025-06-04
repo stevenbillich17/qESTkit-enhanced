@@ -14,6 +14,4 @@ class Y(Gate):
         if len(self.qubits) != 1:
             raise ValueError("Y gate acts on exactly one qubit.")
         # The matrix representation of the Y gate
-        self.matrix = np.array([[0, -1j],
-                                [1j, 0]], dtype=complex)
-
+        self.matrix = np.array([[0, -1j], [1j, 0]], dtype=complex)

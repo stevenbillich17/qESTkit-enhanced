@@ -1,6 +1,7 @@
 import numpy as np
 from .gate import Gate
 
+
 class CZ(Gate):
     def __init__(self, qubits=None):
         """
@@ -10,7 +11,7 @@ class CZ(Gate):
         """
         if qubits is None or len(qubits) != 2:
             raise ValueError("CZ gate requires exactly two qubits: [control, target].")
-        super().__init__(name='CZ', qubits=qubits)
+        super().__init__(name="CZ", qubits=qubits)
 
     def apply(self, simulator_context, **kwargs):
         """

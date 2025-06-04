@@ -1,6 +1,7 @@
 import numpy as np
 from .gate import Gate
 
+
 class Rz(Gate):
     def __init__(self, theta, qubits=None):
         """
@@ -9,7 +10,7 @@ class Rz(Gate):
         :param theta: Rotation angle in radians.
         :param qubits: Optional, indices of qubits this gate acts on.
         """
-        super().__init__(name='Rz', qubits=qubits)
+        super().__init__(name="Rz", qubits=qubits)
         self.theta = theta
 
     def apply(self, simulator_context, **kwargs):

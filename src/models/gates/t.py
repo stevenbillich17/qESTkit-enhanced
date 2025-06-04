@@ -1,6 +1,7 @@
 import numpy as np
 from .gate import Gate
 
+
 class T(Gate):
     def __init__(self, qubits=None):
         """
@@ -8,7 +9,7 @@ class T(Gate):
 
         :param qubits: Optional, indices of qubits this gate acts on.
         """
-        super().__init__(name='T', qubits=qubits)
+        super().__init__(name="T", qubits=qubits)
 
     def apply(self, simulator_context, **kwargs):
         """
