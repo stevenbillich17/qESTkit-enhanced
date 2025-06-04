@@ -1,6 +1,7 @@
 import numpy as np
 from .gate import Gate
 
+
 class Ph(Gate):
     def __init__(self, delta, qubits=None):
         """
@@ -9,7 +10,7 @@ class Ph(Gate):
         :param delta: Phase shift angle in radians.
         :param qubits: Optional, indices of qubits this gate acts on.
         """
-        super().__init__(name='Ph', qubits=qubits)
+        super().__init__(name="Ph", qubits=qubits)
         self.delta = delta
 
     def apply(self, simulator_context, **kwargs):

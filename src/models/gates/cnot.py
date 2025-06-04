@@ -1,6 +1,7 @@
 import numpy as np
 from .gate import Gate
 
+
 class CNOT(Gate):
     def __init__(self, control_qubit, target_qubit):
         """
@@ -9,7 +10,7 @@ class CNOT(Gate):
         :param control_qubit: Index of the control qubit.
         :param target_qubit: Index of the target qubit.
         """
-        super().__init__(name='CNOT', qubits=[control_qubit, target_qubit])
+        super().__init__(name="CNOT", qubits=[control_qubit, target_qubit])
 
     def apply(self, simulator_context, **kwargs):
         """

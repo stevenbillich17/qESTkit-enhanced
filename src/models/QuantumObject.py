@@ -20,7 +20,9 @@ class QuantumObject:
         Raises:
             NotImplementedError: If called on the base class directly.
         """
-        raise NotImplementedError("Validate method must be implemented by the subclass.")
+        raise NotImplementedError(
+            "Validate method must be implemented by the subclass."
+        )
 
     def __repr__(self):
         return f"{self.__class__.__name__}(name={self.name})"

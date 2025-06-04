@@ -13,5 +13,4 @@ class Z(Gate):
         if len(self.qubits) != 1:
             raise ValueError("Z gate acts on exactly one qubit.")
         # The matrix representation of the Z gate
-        self.matrix = np.array([[1, 0],
-                                [0, -1]], dtype=complex)
+        self.matrix = np.array([[1, 0], [0, -1]], dtype=complex)

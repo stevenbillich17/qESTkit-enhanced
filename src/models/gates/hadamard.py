@@ -1,6 +1,7 @@
 import numpy as np
 from .gate import Gate
 
+
 class Hadamard(Gate):
     def __init__(self, qubits=None):
         """
@@ -8,7 +9,7 @@ class Hadamard(Gate):
 
         :param qubits: Optional, indices of qubits this gate acts on.
         """
-        super().__init__(name='H', qubits=qubits)
+        super().__init__(name="H", qubits=qubits)
 
     def apply(self, simulator_context, **kwargs):
         """
@@ -20,4 +21,3 @@ class Hadamard(Gate):
         :return: The modified simulator context.
         """
         pass
-
